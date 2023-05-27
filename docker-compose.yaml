@@ -25,7 +25,7 @@ services:
 
   dedoduro:
     image: felipe8398/mina:0.1
-    container_name: dedoduro
+    container_name: Mina
     network_mode: "host"
     depends_on:
       - kibana
