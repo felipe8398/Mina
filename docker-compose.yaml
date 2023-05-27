@@ -23,8 +23,8 @@ services:
     depends_on:
       - elasticsearch
 
-  dedoduro:
-    image: felipe8398/mina:0.1
+  Mina:
+    image: felipe8398/mina:0.2
     container_name: Mina
     network_mode: "host"
     depends_on:
