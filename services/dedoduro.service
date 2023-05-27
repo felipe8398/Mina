@@ -1,0 +1,10 @@
+[Unit]
+Description=DedoDuro
+
+[Service]
+User=root
+WorkingDirectory=/opt/dedoduro/
+ExecStart=/bin/bash dedoduro.sh 
+
+[Install]
+WantedBy=multi-user.target

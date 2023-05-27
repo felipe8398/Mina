@@ -1,0 +1,32 @@
+version: '3'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.14.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ELASTIC_PASSWORD=senha_aqui
+    ports:
+      - 9200:9200
+    network_mode: "host"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.14.0
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://localhost:9200
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=senha_aqui
+    ports:
+      - 5601:5601
+    network_mode: "host"
+    depends_on:
+      - elasticsearch
+
+  dedoduro:
+    image: felipe8398/mina:0.1
+    container_name: dedoduro
+    network_mode: "host"
+    depends_on:
+      - kibana
+
