@@ -24,7 +24,7 @@ services:
       - elasticsearch
 
   Mina:
-    image: felipe8398/mina:0.2
+    image: felipe8398/mina:0.4
     container_name: Mina
     network_mode: "host"
     depends_on:
